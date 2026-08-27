@@ -1,0 +1,40 @@
+{
+  "name": "veeam-backup-kalkulator",
+  "version": "1.0.0",
+  "description": "Veeam Isolated Backup Kalkulator - desktop app",
+  "main": "main.js",
+  "author": "Mb-solutions",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win msi"
+  },
+  "devDependencies": {
+    "electron": "^31.3.1",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "dk.mb-solutions.veeamkalkulator",
+    "productName": "Veeam Backup Kalkulator",
+    "copyright": "Mb-solutions",
+    "files": [
+      "main.js",
+      "veeambackupkalkulator.html",
+      "build/icon.ico"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "msi",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "msi": {
+      "shortcutName": "Veeam Backup Kalkulator",
+      "perMachine": false
+    }
+  }
+}
